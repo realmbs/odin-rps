@@ -17,6 +17,14 @@ const playOneRound = (playerSelection, computerSelection) => {
     return `You lose! ${computerSelection} beats ${playerSelection}`;
   }
 }
-const playerSelection = 'rock';
-const computerSelection = getComputerChoice();
-console.log(playOneRound(playerSelection, computerSelection));
+
+const playGame = () => {
+  // loop through 5 rounds of playOneRound
+  for (let i = 0; i < 5; i++) {
+    const playerSelection = prompt('Enter choice: Rock, Paper, or Scissors');
+    const computerSelection = getComputerChoice();
+    console.log(playOneRound(playerSelection, computerSelection));
+  };
+}
+
+playGame()
