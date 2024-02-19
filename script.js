@@ -55,3 +55,9 @@ buttonScissors.addEventListener('click', () => {
   container.appendChild(score);
 });
 
+const resetButton = document.querySelector('.reset');
+resetButton.addEventListener('click', () => {
+  runningScore = 0;
+  score.textContent = `Score: ${runningScore}`;
+  container.appendChild(score);
+});
