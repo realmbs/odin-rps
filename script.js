@@ -4,6 +4,11 @@ const getComputerChoice = () => {
 }
 
 console.log(getComputerChoice());
+
+const buttonRock = document.querySelector('.rock');
+const buttonPaper = document.querySelector('.paper');
+const buttonScissors = document.querySelector('.scissors');
+
 const playOneRound = (playerSelection, computerSelection) => {
   if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
     return `It's a tie! you both chose ${playerSelection}`;
@@ -18,13 +23,17 @@ const playOneRound = (playerSelection, computerSelection) => {
   }
 }
 
-const playGame = () => {
-  // loop through 5 rounds of playOneRound
-  for (let i = 0; i < 5; i++) {
-    const playerSelection = prompt('Enter choice: Rock, Paper, or Scissors');
-    const computerSelection = getComputerChoice();
-    console.log(playOneRound(playerSelection, computerSelection));
-  };
-}
+buttonRock.addEventListener('click', () => {
+  const computerSelection = getComputerChoice();
+  console.log(playOneRound('rock', computerSelection));
+});
 
-playGame();
+buttonPaper.addEventListener('click', () => {
+  const computerSelection = getComputerChoice();
+  console.log(playOneRound('paper', computerSelection));
+});
+
+buttonScissors.addEventListener('click', () => {
+  const computerSelection = getComputerChoice();
+  console.log(playOneRound('scissors', computerSelection));
+});
